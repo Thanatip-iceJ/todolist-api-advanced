@@ -1,0 +1,36 @@
+*** REGISTER ***
+// POST /auth/register
+// BODY: {
+    id INT @id @default(autoincrement())
+    username String @unique
+    password String
+    confirmPassword String 
+    email String @unique
+}
+
+LOGIN
+-POST /auth/login
+
+CREATE TODO
+// POST /todo/create-todo
+// HEADER AUTHORIZATION BEARER ACCESS_TOKEN
+// BODY: {
+    id INT @id @default(autoincrement())
+    title String
+    completed Boolean @default(false)
+    dueDate Date
+    userId Int
+}
+// RESPONSE: {
+    201: todo created
+}
+
+
+UPDATE TODO BY ID
+
+DELETE TODO BY ID
+
+GET ALL TODO
+
+GET TODO BY ID
+
